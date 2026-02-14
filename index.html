@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>С 14 февраля ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #ffdde1);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    overflow-x: hidden;
+}
+
+/* Движение градиента */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Стартовый экран */
+#startScreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 117, 140, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+#startScreen h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#startScreen button {
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #ff4d6d;
+    cursor: pointer;
+    box-shadow: 0 0 20px pink;
+    transition: 0.3s;
+}
+
+#startScreen button:hover {
+    transform: scale(1.1);
+}
+
+/* Основной блок */
+.card {
+    position: relative;
+    top: 60px; /* чуть ниже верхней части экрана */
+    text-align: center;
+    color: #b3003c;
+    padding: 10px;
+    max-width: 90vw;
+    margin: auto;
+}
+
+video {
+    width: 320px; /* фиксированный размер видео */
+    max-width: 90vw;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(255,255,255,0.9);
+    margin-bottom: 15px;
+}
+
+/* Текст */
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.4rem;
+}
+
+/* Адаптив для телефонов */
+@media (max-width: 480px) {
+    h1 { font-size: 1.5rem; }
+    p { font-size: 0.95rem; line-height: 1.2rem; }
+    .card { top: 50px; }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+    <source src="love.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Стартовый экран -->
+<div id="startScreen">
+    <h2>Перед тем как открыть, хочу сказать 💖</h2>
+    <button onclick="startLove()">💘 С 14 Февраля 💘</button>
+</div>
+
+<!-- Основной контент -->
+<div class="card" id="mainCard" style="display:none;">
+    <video id="loveVideo" loop playsinline>
+        <source src="love.mp4" type="video/mp4">
+    </video>
+
+    <h1>С 14 февраля ❤️</h1>
+    <p>
+        «Дорогая Дилинур,<br>
+С 14 февраля! В этот особенный день я хочу сказать тебе, что даже если мы ещё не встретились, я уже представляю твою улыбку, твой смех и то тепло, которое ты приносишь в этот мир.<br>
+Я мечтаю о том дне, когда смогу обнять тебя и сказать все слова, которые сейчас храню в сердце. Пусть каждый момент этого дня наполнен радостью, нежностью и маленькими чудесами.<br>
+Дилинур, мир станет ярче, а каждый день будет наполнен счастьем и смехом. Сегодня я хочу пожелать тебе улыбок, вдохновения и невероятной красоты внутри и снаружи.<br>
+Ты заслуживаешь всего самого светлого, <br>
+С 14 февраля, Дилинур! 💖 Пусть твое сердце всегда светится радостью, а жизнь будет наполнена любовью, которую ты так достойно заслуживаешь.»
+    </p>
+</div>
+
+<script>
+function startLove(){
+    const music = document.getElementById("bgMusic");
+    const video = document.getElementById("loveVideo");
+    const startScreen = document.getElementById("startScreen");
+    const mainCard = document.getElementById("mainCard");
+
+    // Включаем звук после клика
+    music.play().catch(()=>{});
+    video.play();
+
+    startScreen.style.display="none";
+    mainCard.style.display="block";
+}
+</script>
+
+</body>
+</html>
